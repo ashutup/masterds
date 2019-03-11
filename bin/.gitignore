@@ -1,1 +1,5 @@
-*.class
+/.DS_Store
+/com
+/observer
+/reflection
+/triplets
