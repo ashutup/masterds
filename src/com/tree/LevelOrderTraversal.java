@@ -7,6 +7,7 @@ public class LevelOrderTraversal {
 	/**
 	 * @param args
 	 */
+	
 	public static void main(String[] args) {
 		TreeNode n5 = new TreeNode(5, "", null, null);
 		TreeNode n15 = new TreeNode(15, "", null, null);
@@ -62,6 +63,10 @@ public class LevelOrderTraversal {
 			return 0;
 		
 		return Math.max(findHeight(root.left), findHeight(root.right)) + 1;
+	}
+	
+	public static void levelOrderTraverseUsingQueue(){
+		
 	}
 	
 	
