@@ -1,13 +1,16 @@
 package com.tree;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class LevelOrderTraversal {
-	
+
 	private static boolean leftToRight = false;
 
 	/**
 	 * @param args
 	 */
-	
+
 	public static void main(String[] args) {
 		TreeNode n5 = new TreeNode(5, "", null, null);
 		TreeNode n15 = new TreeNode(15, "", null, null);
@@ -21,59 +24,61 @@ public class LevelOrderTraversal {
 		TreeNode n20 = new TreeNode(20, "", n5, n15);
 		TreeNode n30 = new TreeNode(30, "", n21, n9);
 		TreeNode root = new TreeNode(50, "", n20, n30);
-        
-		
+
 		root.print(root, 0);
 		System.out.println("Height of a tree " + findHeight(root));
-//		System.out.println(TreeTraversal.heightOfTree(root));
-		
-		
+		// System.out.println(TreeTraversal.heightOfTree(root));
+
 		int h = findHeight(root);
-		for(int i=1 ; i <= h ; i++){
+		for (int i = 1; i <= h; i++) {
 			levelOrder(root, i);
-			if(leftToRight)
+			if (leftToRight)
 				leftToRight = false;
 			else
 				leftToRight = true;
 		}
+		
+		levelOrderTraverseUsingQueue(root);
 	}
-	
-	
-	public static void levelOrder(TreeNode root, int level){
-		if(root == null)
+
+	public static void levelOrder(TreeNode root, int level) {
+		if (root == null)
 			return;
-		if(level == 1){
+		if (level == 1) {
 			System.out.println(root.data1);
-			
-		}else if(leftToRight){
-			
-			levelOrder(root.left, level-1);
-			levelOrder(root.right, level-1);
-			
+		} else if (leftToRight) {
+			levelOrder(root.left, level - 1);
+			levelOrder(root.right, level - 1);
+		} else {
+			levelOrder(root.right, level - 1);
+			levelOrder(root.left, level - 1);
 		}
-		else{
-			levelOrder(root.right, level-1);
-			levelOrder(root.left, level-1);
-		}
-		
-		
-		
 	}
-	
-	
-	public static int findHeight(TreeNode root){
-		if(root == null){
+
+	public static int findHeight(TreeNode root) {
+		if (root == null) {
 			return 0;
 		}
-		
 		return Math.max(findHeight(root.left), findHeight(root.right)) + 1;
 	}
-	
-	public static void levelOrderTraverseUsingQueue(){
-		
+
+	public static void levelOrderTraverseUsingQueue(TreeNode root) {
+		if(root == null){
+			return;
+		}
+
+		Queue q = new LinkedList();
+		q.add(root);
+		while(!q.isEmpty()){
+			TreeNode node = (TreeNode)q.poll();
+			if(node.left != null)
+				q.add(node.left);
+			if(node.right != null)
+				q.add(node.right);
+			
+			System.out.println(node.data1);
+			
+		}
 	}
-	
-	
-	
 
 }
