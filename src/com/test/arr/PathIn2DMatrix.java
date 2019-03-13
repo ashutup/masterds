@@ -16,6 +16,9 @@ public class PathIn2DMatrix {
 
 		System.out.println(noOfPaths(4,4));
 		System.out.println(noOfPathsWithoutRecursion(4,4));
+		
+		List<Point> path = new ArrayList<Point>();
+		getPath(5, 5);
 
 	}
 
@@ -53,29 +56,25 @@ public class PathIn2DMatrix {
 
 	}
 
-	public static boolean getPath(int x, int y, List<Point> path) {
+	public static boolean getPath(int x, int y) {
 
-		path.add(new Point(x, y));
 		if (x == 0 && y == 0) {
 
 			System.out.println("Path Found");
 			return true;
 		}
+		boolean xPath = false;
+		boolean yPath = false;
+		if(x != 0){
+			xPath = getPath(x - 1, y);
+		}
+		if(y != 0){
+			yPath = getPath(x, y - 1);
+		}
 
-		boolean success = false;
-		success = getPath(x - 1, y, path);
-
-		if (!success)
-			success = getPath(x, y - 1, path);
-
-		return success;
+		return xPath || yPath;
 	}
 
-	private static boolean isFree(Point p) {
-		if (p.x == 2 || p.y == 3)
-			return true;
-
-		return false;
-	}
+	
 
 }

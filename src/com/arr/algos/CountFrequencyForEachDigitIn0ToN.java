@@ -4,13 +4,10 @@ public class CountFrequencyForEachDigitIn0ToN {
 
 	public static void main(String[] args) {
 		
-		int n = 10;
-		
-		int[] arr = CountOccurencesOfEachDigit(100);
+		int[] arr = CountOccurencesOfEachDigit(50);
 		for (int i = 0; i < arr.length; i++) {
 			System.out.println("Count["+i+"] " + arr[i]);
 		}
-
 	}
 
 	
@@ -26,9 +23,7 @@ public class CountFrequencyForEachDigitIn0ToN {
 				arr[mod]++;
 				temp = temp / 10;
 			}
-			
 		}
-		
 		return arr;
 	}
 }
