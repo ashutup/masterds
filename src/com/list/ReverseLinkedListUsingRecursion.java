@@ -31,25 +31,16 @@ public class ReverseLinkedListUsingRecursion {
 	}
 
 	public static void reverseRecursive(Node node) {
-		if (node == null)
-			return;
-
-		Node first, rest;
-
-		first = node;
-		rest = node.next;
-		
-		
-
-		if (rest == null){
-			head = first;
-			return;
+		if(node == null || node.next == null){
+			head = node;
+			return ;
 		}
+		
+		Node first = node;
+		Node rest = node.next;
 		
 		reverseRecursive(rest);
 		
-		
-
 		first.next.next = first;
 		first.next = null;
 	}

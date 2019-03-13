@@ -26,10 +26,9 @@ public class MirrorImage {
 
 		TreeNode root1 = convertToMirroImage(root);
 		System.out.println("-----------------");
-		// TreeTraversal.inOrderTraversal(root1);
 		root1.print(root1, 0);
 
-//		System.out.println(checkForMirrorImage(root, t));
+		System.out.println(checkForMirrorImage(root, root1));
 
 	}
 

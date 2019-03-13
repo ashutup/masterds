@@ -1,6 +1,5 @@
 package com.tree;
 
-import com.list.Node;
 
 public class TreeNode {
 

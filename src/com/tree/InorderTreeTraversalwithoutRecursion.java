@@ -19,46 +19,33 @@ public class InorderTreeTraversalwithoutRecursion {
 		TreeNode n28 = new TreeNode(28, "", null, null);
 		TreeNode n25 = new TreeNode(25, "", null, n28);
 		TreeNode n40 = new TreeNode(40, "", null, n50);
-		
-		
 
 		TreeNode n10 = new TreeNode(10, "", n5, n15);
 		TreeNode n30 = new TreeNode(30, "", n25, n40);
 		TreeNode root = new TreeNode(20, "", n10, n30);
-
+		root.print(root, 2);
 		traverseWithStack(root);
-		
-		
-		
-		
+
 	}
-	
-	
-	public static void  traverseWithStack(TreeNode node){
+
+	public static void traverseWithStack(TreeNode node) {
 		Stack<TreeNode> s = new Stack<TreeNode>();
 		boolean complete = false;
-		while(!complete){
-			while(node!=null){
+		while (!complete) {
+			while (node != null) {
 				s.push(node);
 				node = node.left;
 			}
-			
-			if(!s.isEmpty()){
+			if (!s.isEmpty()) {
 				TreeNode temp = s.pop();
 				System.out.println(temp.data1);
-				
-				if(temp.right != null){
+				if (temp.right != null) {
 					node = temp.right;
-					continue;
 				}
-				
-			}
-			else{
+			} else {
 				complete = true;
 			}
 		}
 	}
-
-	
 
 }

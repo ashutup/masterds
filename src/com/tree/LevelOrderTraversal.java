@@ -30,13 +30,15 @@ public class LevelOrderTraversal {
 		// System.out.println(TreeTraversal.heightOfTree(root));
 
 		int h = findHeight(root);
-		for (int i = 1; i <= h; i++) {
-			levelOrder(root, i);
-			if (leftToRight)
-				leftToRight = false;
-			else
-				leftToRight = true;
-		}
+		
+		levelOrder(root, 4);
+//		for (int i = 1; i <= h; i++) {
+//			levelOrder(root, i);
+//			if (leftToRight)
+//				leftToRight = false;
+//			else
+//				leftToRight = true;
+//		}
 		
 		levelOrderTraverseUsingQueue(root);
 	}
@@ -66,7 +68,7 @@ public class LevelOrderTraversal {
 		if(root == null){
 			return;
 		}
-
+		System.out.println("===============");
 		Queue q = new LinkedList();
 		q.add(root);
 		while(!q.isEmpty()){
