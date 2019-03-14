@@ -19,26 +19,23 @@ public class PrintNodesKDistanceFromRoot {
 		TreeNode n30 = new TreeNode(30, "", n21, n9);
 		TreeNode T = new TreeNode(50, "", n20, n30);
 
-		
-
 		T.print(T, 0);
 		System.out.println("Nodes ---- ");
-		printNodes(T, 2);
+		printNodes(T, 4);
 
 	}
-	
-	
-	public static void printNodes(TreeNode root,int k){
-		if(root == null)
+
+	public static void printNodes(TreeNode root, int k) {
+		if (root == null)
 			return;
-		
-		if(k == 0){
+
+		if (k == 0) {
 			System.out.println(root.data1);
 			return;
 		}
-		
-		printNodes(root.left, k-1);
-		printNodes(root.right, k-1);
+
+		printNodes(root.left, k - 1);
+		printNodes(root.right, k - 1);
 	}
 
 }
