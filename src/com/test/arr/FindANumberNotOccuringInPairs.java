@@ -1,7 +1,7 @@
 package com.test.arr;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.HashSet;
+import java.util.Set;
 
 public class FindANumberNotOccuringInPairs {
 
@@ -12,49 +12,49 @@ public class FindANumberNotOccuringInPairs {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		int[] arr = new int[]{1,1,2,2,5,5,7,7,99,99,0,3,3,12,12,43,43,8,8};
-		
+		int[] arr = new int[] { 1, 1, 2, 2, 5, 5, 7, 7, 99, 99, 3, 3, 12, 12,
+				43, 43, 8, 8, 18, 50, 50 };
+
 		nonPairedIntegerSimple(arr);
-		
-//		nonPairedIntegerUsingHashMap(arr);
-				
+
+		nonPairedIntegerUsingHashSet(arr);
 	}
-	
+
 	/***
 	 * Non sorted Array
+	 * 
 	 * @param arr
 	 */
-	public static void nonPairedIntegerUsingHashMap(int[] arr){
-		Map<Integer,Boolean> map = new HashMap<Integer,Boolean>();
-		
+	public static void nonPairedIntegerUsingHashSet(int[] arr) {
+		Set<Integer> set = new HashSet<Integer>();
+
 		for (int i : arr) {
-			if(map.containsKey(i)){
-				map.remove(i);
-			}else{
-				map.put(i, true);
+			if (set.contains(i)) {
+				set.remove(i);
+			} else {
+				set.add(i);
 			}
 		}
-		
-		System.out.println("Single numbers : " + map.keySet());
-		
+		System.out.println("Single numbers : " + set);
 	}
-	
-	
+
 	/***
 	 * Guess this solutions holds good for sorted array
+	 * 
 	 * @param arr
 	 */
-	public static void nonPairedIntegerSimple(int[] arr){
-		for (int i = 0; i < arr.length; i=i+2) {
-			if(i ==  arr.length - 1){
-				System.out.println("single Elment is " + arr[i]);
-				break;
-			}
-			if(arr[i] != arr[i+1]){
-				System.out.println("single Elment is " + arr[i]);
-//				break;
-			}
+	public static void nonPairedIntegerSimple(int[] arr) {
+		int x = 0;
+		int y = 1;
+
+		while (y < arr.length && arr[x] == arr[y]) {
+			x = x + 2;
+			y = y + 2;
 		}
+
+		System.out.println("Single numbers : " + arr[x]);
 	}
+
+	
 
 }

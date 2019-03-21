@@ -3,7 +3,7 @@ package com.tree;
 import com.list.Node;
 
 public class ConvertSortedLinkedListIntoBST {
-	
+
 	public static int count = 0;
 	public static Node head;
 
@@ -11,7 +11,7 @@ public class ConvertSortedLinkedListIntoBST {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		 head = new Node();
+		head = new Node();
 		head.appendToTail(1);
 		head.appendToTail(2);
 		head.appendToTail(3);
@@ -19,33 +19,30 @@ public class ConvertSortedLinkedListIntoBST {
 		head.appendToTail(5);
 		head.appendToTail(6);
 		head.appendToTail(7);
-		
 
-		TreeNode root = convert(0 , head.length()-1);
+		TreeNode root = convert(head.length());
 
 		root.print(root, 1);
-		
+
 		System.out.println("Count " + count);
 	}
 
-	public static TreeNode convert(int start , int end ) {
+	public static TreeNode convert(int size) {
 		// base case
-		if (start > end)
+		if (size <= 0)
 			return null;
-//		count++;
-		int mid = start + (end - start) / 2;
 
-		TreeNode left = convert( start, mid - 1);
+		TreeNode left = convert(size / 2);
 
 		TreeNode root = new TreeNode();
 
 		root.data1 = head.data1;
 
 		root.left = left;
-		
+
 		head = head.next;
 
-		root.right = convert( mid + 1, end);
+		root.right = convert(size - size / 2 - 1);
 
 		return root;
 	}

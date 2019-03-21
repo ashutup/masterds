@@ -22,7 +22,7 @@ public class FindNoOfWaysToReachNXNMatrix
                        {13,14,15,16}
         };
         
-        System.out.println("No of Ways " + noOfWaysToReachNxN(10, 10));
+        System.out.println("No of Ways " + noOfPathsWithoutRecursion(10, 10));
         
     }
     
@@ -34,5 +34,26 @@ public class FindNoOfWaysToReachNXNMatrix
         
         return noOfWaysToReachNxN(m, n-1) + noOfWaysToReachNxN(m-1, n);
     }
+    
+    public static int noOfPathsWithoutRecursion(int x, int y) {
+		int[][] count = new int[x][y];
+		
+		for(int i = 0 ; i < x ; i ++){
+			count[i][0] = 1;
+		}
+		
+		for(int j = 0 ; j < y ; j ++){
+			count[0][j] = 1;
+		}
+		
+		for (int i = 1; i < x; i++) {
+			for (int j = 1; j < y; j++) {
+				count[i][j] = count[i-1][j] + count[i][j-1];
+			}
+		}
+
+		return count[x-1][y-1];
+
+	}
 
 }

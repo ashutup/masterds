@@ -36,24 +36,24 @@ public class SecondHighestIntegerInArray
     public static void main (String[] args)
     {
 
-        int[] arr = new int[] { 13, 56, 33, 12, 67, 89 , 88};
-        int max_one = arr[0];
-        int max_two = 0;
+        int[] arr = new int[] { 13, 56, 33, 12, 67, 89 , 88, 100};
+        int highest = arr[0];
+        int secondHighest = 0;
 
         for (int i = 1; i < arr.length; i++) {
 
-            if (max_one < arr[i]) {
-                max_two = max_one;
-                max_one = arr[i];
+            if (arr[i] > highest) {
+                secondHighest = highest;
+                highest = arr[i];
 
             }
-            else if (max_two > arr[i]) {
+            else if ( arr[i] > secondHighest) {
 
-                max_two = arr[i];
+                secondHighest = arr[i];
             }
 
         }
-        System.out.println("Highest is" + max_two);
+        System.out.println("Second Highest is " + secondHighest);
     }
 
 }

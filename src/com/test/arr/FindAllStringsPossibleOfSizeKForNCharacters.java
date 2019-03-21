@@ -24,7 +24,7 @@ public class FindAllStringsPossibleOfSizeKForNCharacters {
 
 		String startingPoint = "";
 
-		printAll(set, startingPoint, size);
+		printAll(set, startingPoint, 5);
 		System.out.println(c);
 	}
 

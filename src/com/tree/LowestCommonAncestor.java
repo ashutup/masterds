@@ -91,10 +91,7 @@ public class LowestCommonAncestor {
 			
 			
 		}
-		
 		System.out.println("LCA by Traversals : " + arr2[maxPostion]);
-		
-		
 	}
 	
 	public static TreeNode lowestCommonAncestorUsingRecursion(TreeNode root, int m, int n){

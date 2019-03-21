@@ -7,7 +7,7 @@ public class UniqueCharactersInString {
 	 */
 	public static void main(String[] args) {
 
-		String str = "a11bcdefghijklmnopqrstuvwxyz";
+		String str = "a123455bcdefghijklmnopqrstuvwxyz";
 		
 		boolean[] booleanArr = new boolean[256];
 		
