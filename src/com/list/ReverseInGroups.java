@@ -15,8 +15,8 @@ public class ReverseInGroups {
 			head.appendToTail(i);
 		}
 		System.out.println(head.toStringInt());
-//		Node result = reverseInGroup(head,4);
-		Node result = reverse(head);
+		Node result = reverseInGroup(head,4);
+//		Node result = reverse(head);
 		System.out.println(result.toStringInt());
 	}
 	

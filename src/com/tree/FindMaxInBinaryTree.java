@@ -27,7 +27,7 @@ public class FindMaxInBinaryTree
         TreeNode n40 = new TreeNode(40, "", null, n50);
 
         TreeNode n10 = new TreeNode(10, "", n5, n15);
-        TreeNode n30 = new TreeNode(30, "", n25, n40);
+        TreeNode n30 = new TreeNode(2000, "", n25, n40);
         TreeNode root = new TreeNode(20, "", n10, n30);
         
         System.out.println(findMax(root));
