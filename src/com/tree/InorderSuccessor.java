@@ -11,7 +11,7 @@ public class InorderSuccessor {
 	static TreeNode ios = null;
 
 	/**
-	 * @param args
+	 * @param args--==
 	 */
 	public static void main(String[] args) {
 		TreeNode n2 = new TreeNode(2, "", null, null);
