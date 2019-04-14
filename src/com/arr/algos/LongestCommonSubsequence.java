@@ -6,8 +6,8 @@ public class LongestCommonSubsequence {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		String S = "AGGTAB";
-		String M = "GXTXAYB";
+		String S = "AGGTACB";
+		String M = "GXTXACYB";
 
 		System.out.println("Size of Longest Common Subsequece "
 				+ lcs(S.toCharArray(), S.length() - 1, M.toCharArray(),
