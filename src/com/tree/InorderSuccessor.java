@@ -36,6 +36,10 @@ public class InorderSuccessor {
 		inOrderSuccessor(root, 28);
 		System.out.println("Inorder Successor Recursive : " + ios.data1);
 		
+		TreeNode prev = null;
+		findInorderSuccessorOfBinaryTree(root, 28, prev);
+		
+		
 		
 	}
 	
@@ -69,6 +73,20 @@ public class InorderSuccessor {
 	            
 		return suc;
 
+	}
+	
+	public static void findInorderSuccessorOfBinaryTree(TreeNode root, int n, TreeNode prev) {
+	    if(root == null)
+	        return ;
+	    
+	    findInorderSuccessorOfBinaryTree(root.right, n, prev);
+	    
+	    if(root.data1 == n) {
+	    	System.out.println(prev.data1);
+	    }
+	    prev = root;
+	    
+	    findInorderSuccessorOfBinaryTree(root.left, n, prev);
 	}
 	
 	public static int getHeight(TreeNode root){

@@ -8,6 +8,7 @@ public class TreeNode {
 	TreeNode right;
 	TreeNode random;
 	TreeNode parent;
+	boolean visited;
 
 	TreeNode next;
 

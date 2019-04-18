@@ -11,9 +11,8 @@ public class WordBreakBacktracking {
 	public static void main(String[] args) {
 
 		// array of strings to be added in dictionary set.
-		String temp_dictionary[] = { "mobile", "samsung", "sam", "sung", "man",
-				"mango", "icecream", "and", "go", "i", "like", "ice", "cream",
-				"too", "but" };
+		String temp_dictionary[] = { "mobile", "samsung", "sam", "sung", "man", "mango", "icecream", "and", "go", "i",
+				"like", "ice", "cream", "too", "but" };
 
 		// loop to add all strings in dictionary set
 		for (String temp : temp_dictionary) {
@@ -33,26 +32,25 @@ public class WordBreakBacktracking {
 		wordBreak(phrase, "");
 	}
 
-	public static void wordBreak(String word, String result) {
-		if (word == null || word.length() == 0) {
+	public static void wordBreak(String phrase, String result) {
+		if (phrase == null || phrase.length() == 0) {
 			return;
 		}
-        int size = word.length();
+		int size = phrase.length();
 		for (int i = 1; i <= size; i++) {
-			String prefix = word.substring(0, i);
+			String prefix = phrase.substring(0, i);
 
 			if (dictionary.contains(prefix)) {
 
 				if (i == size) {
-					result = result  + prefix;
+					result = result + prefix;
 					System.out.println(result);
 					return;
 				}
-				wordBreak(word.substring(i, size), result + prefix + " ");
-
+				wordBreak(phrase.substring(i, size), result + prefix + " ");
 			}
-
 		}
-
 	}
+	
+	
 }
